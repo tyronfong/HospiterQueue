@@ -38,7 +38,7 @@ public class RefreshAuthCode extends Thread {
 	            @Override
 	            public void run() {
 	            	try {
-						First.lblNewLabel.setImage(getImage());
+						First.authCodePic.setImage(getImage());
 					} catch (IllegalStateException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
