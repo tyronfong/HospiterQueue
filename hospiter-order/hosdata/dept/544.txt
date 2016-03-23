@@ -1,0 +1,1 @@
+[{"deptName":"儿科(专家)","qpin":"erke(zhuanjia)","deptId":14798,"jpin":"ekzj"},{"deptName":"牙科","qpin":"yake","deptId":14799,"jpin":"yk"},{"deptName":"口腔科","qpin":"kouqiangke","deptId":14800,"jpin":"kqk"},{"deptName":"中医外科","qpin":"zhongyiwaike","deptId":14801,"jpin":"zywk"},{"deptName":"中医内科(专家)","qpin":"zhongyineike(zhuanjia)","deptId":14802,"jpin":"zynkzj"}]

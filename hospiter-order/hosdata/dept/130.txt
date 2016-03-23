@@ -1,0 +1,1 @@
+[{"deptName":"中医内科","qpin":"zhongyineike","deptId":4989,"jpin":"zynk"},{"deptName":"外科","qpin":"waike","deptId":7974,"jpin":"wk"},{"deptName":"专家门诊","qpin":"zhuanjiamenzhen","deptId":8201,"jpin":"zjmz"},{"deptName":"骨科","qpin":"guke","deptId":6622,"jpin":"gk"}]

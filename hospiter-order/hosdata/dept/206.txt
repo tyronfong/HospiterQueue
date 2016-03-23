@@ -1,0 +1,1 @@
+[{"deptName":"皮肤科门诊","qpin":"pifukemenzhen","deptId":6785,"jpin":"pfkmz"},{"deptName":"内科门诊","qpin":"neikemenzhen","deptId":6803,"jpin":"nkmz"},{"deptName":"外科门诊","qpin":"waikemenzhen","deptId":6813,"jpin":"wkmz"},{"deptName":"外科病区","qpin":"waikebingqu","deptId":6898,"jpin":"wkbq"}]

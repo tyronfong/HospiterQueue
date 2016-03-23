@@ -1,0 +1,1 @@
+[{"deptName":"儿科门诊","qpin":"erkemenzhen","deptId":6023,"jpin":"ekmz"},{"deptName":"消化、心血管内科","qpin":"xiaohuaxinxueguanneike","deptId":6033,"jpin":"xhxxgnk"},{"deptName":"神经、内分泌科","qpin":"shenjingneifenmike","deptId":6046,"jpin":"sjnfmk"},{"deptName":"呼吸、肾内科","qpin":"huxishenneike","deptId":6087,"jpin":"hxsnk"}]

@@ -1,0 +1,1 @@
+[{"deptName":"精神科","qpin":"jingshenke","deptId":4244,"jpin":"jsk"},{"deptName":"精神科专家（正高）","qpin":"jingshenkezhuanjiazhenggao","deptId":3979,"jpin":"jskzjzg"},{"deptName":"精神科专家（副高）","qpin":"jingshenkezhuanjiafugao","deptId":4095,"jpin":"jskzjfg"}]

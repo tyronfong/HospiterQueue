@@ -1,0 +1,1 @@
+[{"deptName":"产科门诊","qpin":"chankemenzhen","deptId":7182,"jpin":"ckmz"},{"deptName":"妇科门诊","qpin":"fukemenzhen","deptId":7204,"jpin":"fkmz"},{"deptName":"乳腺科","qpin":"ruxianke","deptId":7219,"jpin":"rxk"},{"deptName":"儿科门诊","qpin":"erkemenzhen","deptId":7239,"jpin":"ekmz"}]

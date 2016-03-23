@@ -1,0 +1,1 @@
+[{"deptName":"老年精神科门诊","qpin":"laonianjingshenkemenzhen","deptId":6569,"jpin":"lnjskmz"},{"deptName":"心理咨询科","qpin":"xinlizixunke","deptId":6570,"jpin":"xlzxk"},{"deptName":"普通精神科门诊","qpin":"putongjingshenkemenzhen","deptId":6571,"jpin":"ptjskmz"},{"deptName":"失眠抑郁门诊","qpin":"shimianyiyumenzhen","deptId":6583,"jpin":"smyymz"}]

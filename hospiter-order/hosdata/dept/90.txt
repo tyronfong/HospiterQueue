@@ -1,0 +1,1 @@
+[{"deptName":"临床心理科","qpin":"linchuangxinlike","deptId":4844,"jpin":"lcxlk"},{"deptName":"普通精神科","qpin":"putongjingshenke","deptId":4895,"jpin":"ptjsk"}]

@@ -1,0 +1,1 @@
+[{"deptName":"内科","qpin":"neike","deptId":7192,"jpin":"nk"},{"deptName":"妇产科","qpin":"fuchanke","deptId":7193,"jpin":"fck"},{"deptName":"中医科","qpin":"zhongyike","deptId":7213,"jpin":"zyk"}]

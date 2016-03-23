@@ -1,0 +1,1 @@
+[{"deptName":"骨伤科(名中医)","qpin":"gushangke(mingzhongyi)","deptId":3856,"jpin":"gskmzy"},{"deptName":"小针刀门诊(副主任)","qpin":"xiaozhendaomenzhen(fuzhuren)","deptId":3923,"jpin":"xzdmzfzr"},{"deptName":"骨伤科(副主任医师)","qpin":"gushangke(fuzhurenyishi)","deptId":3980,"jpin":"gskfzrys"},{"deptName":"骨伤科(主任医师)","qpin":"gushangke(zhurenyishi)","deptId":4036,"jpin":"gskzrys"}]

@@ -1,0 +1,1 @@
+[{"deptName":"精神病科","qpin":"jingshenbingke","deptId":6165,"jpin":"jsbk"},{"deptName":"精神病科","qpin":"jingshenbingke","deptId":6233,"jpin":"jsbk"},{"deptName":"精神病科","qpin":"jingshenbingke","deptId":6274,"jpin":"jsbk"}]

@@ -1,0 +1,1 @@
+[{"deptName":"精神科","qpin":"jingshenke","deptId":6024,"jpin":"jsk"},{"deptName":"门诊部","qpin":"menzhenbu","deptId":6042,"jpin":"mzb"},{"deptName":"综合精神科","qpin":"zonghejingshenke","deptId":6083,"jpin":"zhjsk"}]

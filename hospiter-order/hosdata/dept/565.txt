@@ -1,0 +1,1 @@
+[{"deptName":"献血减免","qpin":"xianxuejianmian","deptId":16291,"jpin":"xxjm"},{"deptName":"妇保科（免）","qpin":"fubaokemian","deptId":16292,"jpin":"fbkm"},{"deptName":"儿保科（免）","qpin":"erbaokemian","deptId":16293,"jpin":"ebkm"},{"deptName":"中医专家2","qpin":"zhongyizhuanjia2","deptId":16294,"jpin":"zyzj2"}]

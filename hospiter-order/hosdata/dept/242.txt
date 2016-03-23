@@ -1,0 +1,1 @@
+[{"deptName":"口腔科","qpin":"kouqiangke","deptId":9306,"jpin":"kqk"},{"deptName":"中医外科","qpin":"zhongyiwaike","deptId":7161,"jpin":"zywk"},{"deptName":"中医内科","qpin":"zhongyineike","deptId":7163,"jpin":"zynk"},{"deptName":"儿科","qpin":"erke","deptId":8731,"jpin":"ek"}]

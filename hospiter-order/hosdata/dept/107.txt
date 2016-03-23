@@ -1,0 +1,1 @@
+[{"deptName":"普通精神科","qpin":"putongjingshenke","deptId":3501,"jpin":"ptjsk"},{"deptName":"失眠专科","qpin":"shimianzhuanke","deptId":3920,"jpin":"smzk"},{"deptName":"儿童精神科","qpin":"ertongjingshenke","deptId":4094,"jpin":"etjsk"},{"deptName":"心理科门诊","qpin":"xinlikemenzhen","deptId":4143,"jpin":"xlkmz"},{"deptName":"老年精神科","qpin":"laonianjingshenke","deptId":3821,"jpin":"lnjsk"}]

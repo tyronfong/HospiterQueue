@@ -1,0 +1,1 @@
+[{"deptName":"心血管专家","qpin":"xinxueguanzhuanjia","deptId":5001,"jpin":"xxgzj"},{"deptName":"泌尿科专家","qpin":"miniaokezhuanjia","deptId":5753,"jpin":"mnkzj"},{"deptName":"消化内科专家","qpin":"xiaohuaneikezhuanjia","deptId":5768,"jpin":"xhnkzj"},{"deptName":"五官科专家","qpin":"wuguankezhuanjia","deptId":5769,"jpin":"wgkzj"}]
