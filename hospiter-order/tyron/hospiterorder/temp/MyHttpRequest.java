@@ -1,4 +1,4 @@
-package src;
+package tyron.hospiterorder.temp;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -93,54 +93,12 @@ public class MyHttpRequest {
 	
 	public String getHtmlTable() throws ClientProtocolException, IOException{
 		String content = new String();
-		String htmlTable = new String();
-		Pattern table = Pattern.compile("<table[^>]*>(<(?!/?table)[^>]*>|[^<>]*)*</table>");
-		int flag = 0;
-		
 //		HttpGet httpget = new HttpGet("http://www.zj12580.cn/doc/info?docId="+platDocId);
-		HttpGet httpget = new HttpGet("http://www.zj12580.cn/doc/info?docId="+"203");
+		HttpGet httpget = new HttpGet("http://www.zj12580.cn/doc/info?docId="+"1256");
 		HttpResponse response = httpclient.execute(httpget,getHttpcontext());
 		content = EntityUtils.toString(response.getEntity());
-		Matcher matchr = table.matcher(content);
-		while(matchr.find()){
-			if(flag ==2)
-				break;
-			
-			htmlTable = matchr.group();
-			flag++;
-//			System.out.println(htmlTable);
-//			System.out.println("gettableeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
-		}
-		System.out.println(htmlTable);
-		
-		File file = new File("tablecss.html");
-		StringBuffer str = new StringBuffer("");
-		int len = 0;
-		try {
-            FileInputStream is=new FileInputStream(file);
-            InputStreamReader isr= new InputStreamReader(is);
-            BufferedReader in= new BufferedReader(isr);
-            String line=null;
-            while( (line=in.readLine())!=null )
-            {
-                if(len != 0)  // 处理换行符的问题
-                {
-                    str.append("\r\n"+line);
-                }
-                else
-                {
-                    str.append(line);
-                }
-                len++;
-            }
-            in.close();
-            is.close();
-        } catch (IOException e1) {
-            // TODO Auto-generated catch block
-            e1.printStackTrace();
-        }
 		httpget.abort();
-		return str+htmlTable;
+		return content;
 	}
 	
 	public String test(String areaCode, String hosCode, String platCode, String platDocId, String hosName, String deptName, String docName) throws ClientProtocolException, IOException{
@@ -210,7 +168,7 @@ public class MyHttpRequest {
         
         return image;
 	}
-	public String login(String username, String password, String authcode) throws ClientProtocolException, IOException{
+	public String login(String username, String password, String authcode) throws Exception{
 		this.username = new String(username);
 		this.password = new String(password);
 		this.authcode = new String(authcode);

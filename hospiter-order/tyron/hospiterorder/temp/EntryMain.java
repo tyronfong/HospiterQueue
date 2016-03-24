@@ -1,11 +1,7 @@
 /**
  * 
  */
-package src;
-
-import java.io.IOException;
-
-import org.apache.http.client.ClientProtocolException;
+package tyron.hospiterorder.temp;
 
 /**
  * @author Administrator

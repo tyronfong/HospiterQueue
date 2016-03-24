@@ -1,34 +1,37 @@
-package src;
+package tyron.hospiterorder.temp;
 
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
 import org.apache.http.Header;
 import org.apache.http.client.ClientProtocolException;
-import org.eclipse.swt.widgets.Display;
-import org.eclipse.swt.widgets.Shell;
-import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.widgets.Text;
-import org.eclipse.wb.swt.SWTResourceManager;
+import org.eclipse.swt.browser.Browser;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
-import org.eclipse.swt.widgets.Label;
-import org.eclipse.swt.widgets.List;
+import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Combo;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Label;
+import org.eclipse.swt.widgets.Shell;
+import org.eclipse.swt.widgets.Text;
+import org.eclipse.wb.swt.SWTResourceManager;
 import org.json.JSONArray;
 import org.json.JSONException;
-import org.eclipse.swt.browser.Browser;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
+import com.sun.prism.TextureMap;
+
+import tyron.hospiterorder.uicomponent.TextUserName;
 
 //	http://www.zj12580.cn/login
 public class First {
-	private final static String ID_NUM = "330726199308091519";
 	private final static String PASSWORD = "w84922575";
 	public MyHttpRequest httprequest;
 	public String errorcode;
@@ -45,7 +48,8 @@ public class First {
 
 	protected Shell shell;
 
-	private Text text_username;
+//	private Text text_username;
+	private TextUserName textUserName;
 	private Text text_password;
 	private Text text_2;
 	private Text text_3;
@@ -65,7 +69,7 @@ public class First {
 	private Button btnOk;
 	private Button btnNewButton_1;
 
-	private Browser browser;
+//	private Browser browser;
 
 	public static Label authCodePic;
 
@@ -73,9 +77,13 @@ public class First {
 		httprequest = new MyHttpRequest();
 	}
 
+	/**
+	 * @wbp.parser.entryPoint
+	 */
 	public void createContents() throws Exception {
 		initShell();
-		initTextUsername();
+//		initTextUsername();
+		textUserName = new TextUserName(shell);
 		initTextPassword();
 		initTextAuthCode();
 		initTextHint();
@@ -137,7 +145,7 @@ public class First {
 		text_authcode.setVisible(false);
 		text_hint.setVisible(false);
 		text_password.setVisible(false);
-		text_username.setVisible(false);
+//		text_username.setVisible(false);
 		authCodePic.setVisible(false);
 		btnLogin.setVisible(false);
 		btnrefresh.setVisible(false);
@@ -148,21 +156,9 @@ public class First {
 		btnLogout.setVisible(false);
 		comboHospitalList.setVisible(false);
 
-		browser.setVisible(true);
+//		browser.setVisible(true);
 	}
 
-	private String filetoString(File file) throws IOException {
-		BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(file)));
-		String line = null;
-		StringBuffer strbuffer = new StringBuffer();
-
-		while ((line = reader.readLine()) != null) {
-			strbuffer.append(line);
-		}
-
-		reader.close();
-		return strbuffer.toString();
-	}
 
 	private String[] getAreaStr(String areafilepath) throws JSONException, IOException {
 		File areafile = new File(areafilepath);
@@ -278,11 +274,11 @@ public class First {
 		shell.setText("SWT Application");
 	}
 
-	private void initTextUsername() {
-		text_username = new Text(shell, SWT.BORDER);
-		text_username.setText(ID_NUM);
-		text_username.setBounds(302, 56, 214, 27);
-	}
+//	private void initTextUsername() {
+//		text_username = new Text(shell, SWT.BORDER);
+//		text_username.setText(ID_NUM);
+//		text_username.setBounds(302, 56, 214, 27);
+//	}
 
 	private void initTextPassword() {
 		text_password = new Text(shell, SWT.BORDER);
@@ -314,7 +310,7 @@ public class First {
 		btnLogin.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				if (text_username.getText().equals(""))
+				if (textUserName.getText_username().getText().equals(""))
 					text_hint.setText("账号不能为空");
 				else if (text_password.getText().equals(""))
 					text_hint.setText("密码不能为空");
@@ -322,24 +318,14 @@ public class First {
 					text_hint.setText("验证码不能为空");
 				else
 					try {
-						errorcode = new String(httprequest.login(text_username.getText(), text_password.getText(),
+						errorcode = new String(httprequest.login(textUserName.getText_username().getText(), text_password.getText(),
 								text_authcode.getText()));
-
-						text_hint.setText(errorcode);
-
-						// reset the authcodeimage and clear text_authcode
-						// lblNewLabel.setImage(httprequest.getImage());
-						RefreshAuthCode.getInstance().start();
-						text_authcode.setText("");
-
-					} catch (ClientProtocolException e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
-					} catch (IOException e1) {
-						// TODO Auto-generated catch block
+					} catch (Exception e1) {
 						e1.printStackTrace();
 					}
-
+						text_hint.setText(errorcode);
+						RefreshAuthCode.getInstance().start();
+						text_authcode.setText("");
 			}
 		});
 		btnLogin.setBounds(313, 238, 80, 27);
@@ -376,7 +362,6 @@ public class First {
 					// lblNewLabel.setImage(httprequest.getImage());
 					RefreshAuthCode.getInstance().start();
 				} catch (IllegalStateException e1) {
-					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
 			}
@@ -394,10 +379,8 @@ public class First {
 				try {
 					setPostDeptInf("hosdata/dept/" + hosCode + ".txt", comboDeptList.getSelectionIndex());
 				} catch (JSONException e1) {
-					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				} catch (IOException e1) {
-					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
 			}
@@ -412,18 +395,9 @@ public class First {
 			public void widgetSelected(SelectionEvent e) {
 				try {
 					setPostDocInf("hosdata/doc/" + hosCode + ".txt", comboDoctorList.getSelectionIndex());
-					// System.out.println(areaCode);
-					// System.out.println(hosCode);
-					// System.out.println(platCode);
-					// System.out.println(platDocId);
-					// System.out.println(hosName);
-					// System.out.println(deptName);
-					// System.out.println(docName);
 				} catch (JSONException e1) {
-					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				} catch (IOException e1) {
-					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
 			}
@@ -442,10 +416,8 @@ public class First {
 					comboDeptList.setItems(getDeptStr("hosdata/dept/" + hosCode + ".txt"));
 					comboDoctorList.setItems(getDocStr("hosdata/doc/" + hosCode + ".txt"));
 				} catch (JSONException e1) {
-					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				} catch (IOException e1) {
-					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
 			}
@@ -463,10 +435,8 @@ public class First {
 					setPostAreaInf("hosdata/area/areacode.txt", comboAreaCodeList.getSelectionIndex());
 					comboHospitalList.setItems(getHosStr("hosdata/hos/" + areaCode + ".txt"));
 				} catch (JSONException e1) {
-					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				} catch (IOException e1) {
-					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
 			}
@@ -489,10 +459,8 @@ public class First {
 					// private static String deptName;
 					// private static String docName;
 				} catch (ClientProtocolException e1) {
-					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				} catch (IOException e1) {
-					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
 			}
@@ -514,10 +482,8 @@ public class First {
 					RefreshAuthCode.getInstance().start();
 					text_authcode.setText("");
 				} catch (ClientProtocolException e1) {
-					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				} catch (IOException e1) {
-					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
 			}
@@ -527,9 +493,9 @@ public class First {
 	}
 
 	private void initBrowser() {
-		browser = new Browser(shell, SWT.NONE);
-		browser.setBounds(0, 0, 759, 380);
-		browser.setVisible(false);
+//		browser = new Browser(shell, SWT.NONE);
+//		browser.setBounds(0, 0, 759, 380);
+//		browser.setVisible(false);
 	}
 
 	private void initBtnOk() {
@@ -541,25 +507,15 @@ public class First {
 				hideFirst();
 
 				try {
-					browser.setText(httprequest.getHtmlTable());
+					Document doc = Jsoup.parse(httprequest.getHtmlTable());
+					Elements form = doc.select("[name=orderInfo]");
+					System.out.println(form.get(0));
 
 				} catch (ClientProtocolException e2) {
-					// TODO Auto-generated catch block
 					e2.printStackTrace();
 				} catch (IOException e2) {
-					// TODO Auto-generated catch block
 					e2.printStackTrace();
 				}
-
-				// try {
-				// browser.setText(httprequest.getHtmlTable());
-				// } catch (ClientProtocolException e1) {
-				// // TODO Auto-generated catch block
-				// e1.printStackTrace();
-				// } catch (IOException e1) {
-				// // TODO Auto-generated catch block
-				// e1.printStackTrace();
-				// }
 			}
 		});
 		btnOk.setBounds(313, 355, 131, 56);
@@ -573,8 +529,8 @@ public class First {
 			@SuppressWarnings("static-access")
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				System.out.println(browser.getCookie("file_1", "/"));// //////////////////////////////////////////////////
-				System.out.println(browser.evaluate("return document.cookie;"));
+//				System.out.println(browser.getCookie("file_1", "/"));// //////////////////////////////////////////////////
+//				System.out.println(browser.evaluate("return document.cookie;"));
 			}
 		});
 		btnNewButton_1.setBounds(490, 386, 80, 27);

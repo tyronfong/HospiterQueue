@@ -1,4 +1,4 @@
-package src;
+package tyron.hospiterorder.temp;
 
 import java.io.DataInputStream;
 import java.io.IOException;
@@ -35,7 +35,6 @@ public class RefreshAuthCode extends Thread {
 	public void run(){
 		try {
 	        Display.getDefault().asyncExec(new Runnable() {
-	            @Override
 	            public void run() {
 	            	try {
 						First.authCodePic.setImage(getImage());

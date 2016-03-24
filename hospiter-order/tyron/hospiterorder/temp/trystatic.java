@@ -1,4 +1,4 @@
-package src;
+package tyron.hospiterorder.temp;
 
 public class trystatic {
 	public static int a;
