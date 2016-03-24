@@ -26,12 +26,9 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import com.sun.prism.TextureMap;
-
-import tyron.hospiterorder.uicomponent.TextUserName;
-
 //	http://www.zj12580.cn/login
 public class First {
+	private final static String ID_NUM = "330726199308091519";
 	private final static String PASSWORD = "w84922575";
 	public MyHttpRequest httprequest;
 	public String errorcode;
@@ -48,8 +45,7 @@ public class First {
 
 	protected Shell shell;
 
-//	private Text text_username;
-	private TextUserName textUserName;
+	private Text text_username;
 	private Text text_password;
 	private Text text_2;
 	private Text text_3;
@@ -71,7 +67,7 @@ public class First {
 
 //	private Browser browser;
 
-	public static Label authCodePic;
+	public Label authCodePic;
 
 	public First() throws ClientProtocolException, IOException {
 		httprequest = new MyHttpRequest();
@@ -82,8 +78,7 @@ public class First {
 	 */
 	public void createContents() throws Exception {
 		initShell();
-//		initTextUsername();
-		textUserName = new TextUserName(shell);
+		initTextUsername();
 		initTextPassword();
 		initTextAuthCode();
 		initTextHint();
@@ -145,7 +140,7 @@ public class First {
 		text_authcode.setVisible(false);
 		text_hint.setVisible(false);
 		text_password.setVisible(false);
-//		text_username.setVisible(false);
+		text_username.setVisible(false);
 		authCodePic.setVisible(false);
 		btnLogin.setVisible(false);
 		btnrefresh.setVisible(false);
@@ -159,6 +154,18 @@ public class First {
 //		browser.setVisible(true);
 	}
 
+	private String filetoString(File file) throws IOException {
+		BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(file)));
+		String line = null;
+		StringBuffer strbuffer = new StringBuffer();
+
+		while ((line = reader.readLine()) != null) {
+			strbuffer.append(line);
+		}
+
+		reader.close();
+		return strbuffer.toString();
+	}
 
 	private String[] getAreaStr(String areafilepath) throws JSONException, IOException {
 		File areafile = new File(areafilepath);
@@ -274,11 +281,11 @@ public class First {
 		shell.setText("SWT Application");
 	}
 
-//	private void initTextUsername() {
-//		text_username = new Text(shell, SWT.BORDER);
-//		text_username.setText(ID_NUM);
-//		text_username.setBounds(302, 56, 214, 27);
-//	}
+	private void initTextUsername() {
+		text_username = new Text(shell, SWT.BORDER);
+		text_username.setText(ID_NUM);
+		text_username.setBounds(302, 56, 214, 27);
+	}
 
 	private void initTextPassword() {
 		text_password = new Text(shell, SWT.BORDER);
@@ -310,7 +317,7 @@ public class First {
 		btnLogin.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				if (textUserName.getText_username().getText().equals(""))
+				if (text_username.getText().equals(""))
 					text_hint.setText("账号不能为空");
 				else if (text_password.getText().equals(""))
 					text_hint.setText("密码不能为空");
@@ -318,7 +325,7 @@ public class First {
 					text_hint.setText("验证码不能为空");
 				else
 					try {
-						errorcode = new String(httprequest.login(textUserName.getText_username().getText(), text_password.getText(),
+						errorcode = new String(httprequest.login(text_username.getText(), text_password.getText(),
 								text_authcode.getText()));
 					} catch (Exception e1) {
 						e1.printStackTrace();
