@@ -24,13 +24,17 @@ public class ComboDept
 		combo = new Combo(shell, SWT.NONE);
 		combo.setBounds(378, 304, 144, 25);
 		combo.setText("科室");
+	}
+
+	public void attachHosAction(final ComboHospital comboHospital)
+	{
 		combo.addSelectionListener(new SelectionAdapter()
 		{
 			public void widgetSelected(SelectionEvent e)
 			{
 				try
 				{
-					setPostDeptInf("hosdata/dept/" + hosCode + ".txt", combo.getSelectionIndex());
+					setPostDeptInf("hosdata/dept/" + comboHospital.getHosCode() + ".txt", combo.getSelectionIndex());
 				} catch (JSONException e1)
 				{
 					e1.printStackTrace();

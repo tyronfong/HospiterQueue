@@ -1,0 +1,1 @@
+[{"qpin":"yunyuke-shuluanguanmenzhen","deptName":"孕育科-输卵管门诊","deptId":17065,"jpin":"yykslgmz"},{"deptName":"孕育科-输卵管门诊","qpin":"yunyuke-shuluanguanmenzhen","deptId":17066,"jpin":"yykslgmz"},{"qpin":"fuke","deptName":"妇科","deptId":16716,"jpin":"fk"},{"deptName":"男科","qpin":"nanke","deptId":16957,"jpin":"nk"},{"qpin":"buyunbuyu","deptName":"不孕不育","deptId":16947,"jpin":"byby"}]

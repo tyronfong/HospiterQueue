@@ -1,0 +1,1 @@
+[{"deptName":"中医科","qpin":"zhongyike","deptId":26041,"jpin":"zyk"},{"qpin":"tuinazhenjiuke","deptName":"推拿针灸科","deptId":26042,"jpin":"tnzjk"},{"qpin":"waike","deptName":"外科","deptId":26043,"jpin":"wk"},{"deptName":"中西医结合科","qpin":"zhongxiyijieheke","deptId":26044,"jpin":"zxyjhk"}]

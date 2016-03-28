@@ -19,7 +19,7 @@ public class ComboAreaCode
 	private Combo combo;
 	private String areaCode;
 
-	public ComboAreaCode(Shell shell, final Combo comboHospital) throws JSONException, IOException
+	public ComboAreaCode(Shell shell, final ComboHospital comboHospital) throws JSONException, IOException
 	{
 		combo = new Combo(shell, SWT.NONE);
 		combo.setItems(ComboTool.fileToAreaItems("hosdata/area/areacode.txt"));
@@ -32,7 +32,7 @@ public class ComboAreaCode
 				try
 				{
 					setPostAreaInf("hosdata/area/areacode.txt", combo.getSelectionIndex());
-					comboHospital.setItems(ComboTool.fileToHosItems("hosdata/hos/" + areaCode + ".txt"));
+					comboHospital.getCombo().setItems(ComboTool.fileToHosItems("hosdata/hos/" + areaCode + ".txt"));
 				} catch (JSONException e1)
 				{
 					e1.printStackTrace();
@@ -54,4 +54,26 @@ public class ComboAreaCode
 
 		areaCode = areajson.getJSONObject(index).getString("areaCode");
 	}
+
+	public Combo getCombo()
+	{
+		return combo;
+	}
+
+	public void setCombo(Combo combo)
+	{
+		this.combo = combo;
+	}
+
+	public String getAreaCode()
+	{
+		return areaCode;
+	}
+
+	public void setAreaCode(String areaCode)
+	{
+		this.areaCode = areaCode;
+	}
+	
+	
 }

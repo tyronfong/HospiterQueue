@@ -9,15 +9,15 @@ import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Shell;
 
+import tyron.hospiterorder.common.RefreshAuthCode;
 import tyron.hospiterorder.temp.MyHttpRequest;
-import tyron.hospiterorder.temp.RefreshAuthCode;
 
 public class BtnLogout
 {
 	private Button button;
 
 	public BtnLogout(Shell shell, final TextHint textHint, final TextAuthCode textAuthCode,
-			final MyHttpRequest httprequest)
+			final MyHttpRequest httpRequest, final LabelAuthCode labelAuthCode)
 	{
 
 		button = new Button(shell, SWT.NONE);
@@ -28,11 +28,11 @@ public class BtnLogout
 			{
 				try
 				{
-					textHint.getText().setText(httprequest.logout());
+					textHint.getText().setText(httpRequest.logout());
 
 					// reset the authcodeimage and clear text_authcode
 					// lblNewLabel.setImage(httprequest.getImage());
-					RefreshAuthCode.getInstance().start();
+					RefreshAuthCode.getInstance(labelAuthCode.getLabel()).start();
 					textAuthCode.getText().setText("");
 				} catch (ClientProtocolException e1)
 				{

@@ -1,0 +1,1 @@
+[{"qpin":"zhongyizhenjian","deptName":"中医诊间","deptId":29436,"jpin":"zyzj"},{"deptName":"全科诊室","qpin":"quankezhenshi","deptId":29437,"jpin":"qkzs"},{"qpin":"fuchanzhenjian","deptName":"妇产诊间","deptId":29438,"jpin":"fczj"},{"qpin":"yakezhenjian","deptName":"牙科诊间","deptId":29439,"jpin":"ykzj"}]

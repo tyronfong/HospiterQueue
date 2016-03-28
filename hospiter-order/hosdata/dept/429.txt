@@ -1,1 +1,1 @@
-[{"deptName":"皮肤科（专家门诊）","qpin":"pifukezhuanjiamenzhen","deptId":10663,"jpin":"pfkzjmz"},{"deptName":"皮肤科（普通门诊）","qpin":"pifukeputongmenzhen","deptId":10664,"jpin":"pfkptmz"}]
+[{"deptName":"皮肤科（专家门诊）","qpin":"pifukezhuanjiamenzhen","deptId":10663,"jpin":"pfkzjmz"},{"qpin":"pifukeputongmenzhen","deptName":"皮肤科（普通门诊）","deptId":10664,"jpin":"pfkptmz"}]

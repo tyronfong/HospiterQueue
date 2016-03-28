@@ -6,19 +6,20 @@ import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Shell;
 
-import tyron.hospiterorder.temp.RefreshAuthCode;
+import tyron.hospiterorder.common.RefreshAuthCode;
 
 public class BtnRefresh {
 	private Button button;
+	private LabelAuthCode labelAuthCode;
 
-	public BtnRefresh(Shell shell) {
+	public BtnRefresh(Shell shell, final LabelAuthCode labelAuthCode) {
 		button = new Button(shell, SWT.NONE);
 		button.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
 				try {
 					// lblNewLabel.setImage(httprequest.getImage());
-					RefreshAuthCode.getInstance().start();
+					RefreshAuthCode.getInstance(labelAuthCode.getLabel()).start();
 				} catch (IllegalStateException e1) {
 					e1.printStackTrace();
 				}

@@ -6,19 +6,24 @@ import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Shell;
 
+import tyron.hospiterorder.common.RefreshAuthCode;
 import tyron.hospiterorder.temp.MyHttpRequest;
-import tyron.hospiterorder.temp.RefreshAuthCode;
 
-public class BtnLogin {
+public class BtnLogin
+{
 	private Button button;
 	private String errorCode;
 
 	public BtnLogin(Shell shell, final TextUserName textUserName, final TextHint textHint,
-			final TextPassword textPassword, final TextAuthCode textAuthCode, final MyHttpRequest httpRequest) {
+			final TextPassword textPassword, final TextAuthCode textAuthCode, final MyHttpRequest httpRequest,
+			final LabelAuthCode labelAuthCode)
+	{
 		button = new Button(shell, SWT.NONE);
-		button.addSelectionListener(new SelectionAdapter() {
+		button.addSelectionListener(new SelectionAdapter()
+		{
 			@Override
-			public void widgetSelected(SelectionEvent e) {
+			public void widgetSelected(SelectionEvent e)
+			{
 				if (textUserName.getText().getText().equals(""))
 					textHint.getText().setText("账号不能为空");
 				else if (textPassword.getText().equals(""))
@@ -26,14 +31,16 @@ public class BtnLogin {
 				else if (textAuthCode.getText().equals(""))
 					textHint.getText().setText("验证码不能为空");
 				else
-					try {
+					try
+					{
 						errorCode = new String(httpRequest.login(textUserName.getText().getText(),
 								textPassword.getText().getText(), textAuthCode.getText().getText()));
-					} catch (Exception e1) {
+					} catch (Exception e1)
+					{
 						e1.printStackTrace();
 					}
 				textHint.getText().setText(errorCode);
-				RefreshAuthCode.getInstance().start();
+				RefreshAuthCode.getInstance(labelAuthCode.getLabel()).start();
 				textAuthCode.getText().setText("");
 			}
 		});
@@ -41,11 +48,13 @@ public class BtnLogin {
 		button.setText("登陆");
 	}
 
-	public Button getButton() {
+	public Button getButton()
+	{
 		return button;
 	}
 
-	public void setButton(Button button) {
+	public void setButton(Button button)
+	{
 		this.button = button;
 	}
 

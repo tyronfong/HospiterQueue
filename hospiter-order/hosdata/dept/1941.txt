@@ -1,0 +1,1 @@
+[{"deptName":"精神科2","qpin":"jingshenke2","deptId":27764,"jpin":"jsk2"},{"qpin":"zhuanjiamenzhen","deptName":"专家门诊","deptId":27765,"jpin":"zjmz"},{"qpin":"jingshenke1","deptName":"精神科1","deptId":27766,"jpin":"jsk1"},{"qpin":"linchuangxinlike","deptName":"临床心理科","deptId":27767,"jpin":"lcxlk"}]

@@ -1,0 +1,1 @@
+[{"deptName":"中医科","qpin":"zhongyike","deptId":16433,"jpin":"zyk"},{"deptName":"中医张尊祥专家","qpin":"zhongyizhangzunxiangzhuanjia","deptId":16441,"jpin":"zyzzxzj"},{"deptName":"心肺康复科","qpin":"xinfeikangfuke","deptId":16450,"jpin":"xfkfk"}]

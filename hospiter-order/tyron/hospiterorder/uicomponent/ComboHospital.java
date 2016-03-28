@@ -17,26 +17,29 @@ import tyron.hospiterorder.common.FileUtil;
 public class ComboHospital
 {
 	private Combo combo;
-	private String areaCode;
 	private String platCode;
 	private String hosName;
 	private String hosCode;
 
-	public ComboHospital(Shell shell, final Combo comboDoctor, final Combo comoDept) throws JSONException, IOException
+	public ComboHospital(Shell shell) throws JSONException, IOException
 	{
 		combo = new Combo(shell, SWT.NONE);
 		combo.setBounds(222, 304, 144, 25);
 		combo.setText("医院");
+	}
+
+	public void attachAction(final ComboAreaCode comboAreaCode, final ComboDept comboDept, final ComboDoc comboDoctor)
+	{
 		combo.addSelectionListener(new SelectionAdapter()
 		{
 			public void widgetSelected(SelectionEvent e)
 			{
 				try
 				{
-					setPostHosInf("hosdata/hos/" + areaCode + ".txt", combo.getSelectionIndex());
+					setPostHosInf("hosdata/hos/" + comboAreaCode.getAreaCode() + ".txt", combo.getSelectionIndex());
 					// System.out.println(hosCode+" "+platCode+" "+hosName);
-					comoDept.setItems(ComboTool.fileToDeptItems("hosdata/dept/" + hosCode + ".txt"));
-					comboDoctor.setItems(ComboTool.fileToDocItems("hosdata/doc/" + hosCode + ".txt"));
+					comboDept.getCombo().setItems(ComboTool.fileToDeptItems("hosdata/dept/" + hosCode + ".txt"));
+					comboDoctor.getCombo().setItems(ComboTool.fileToDocItems("hosdata/doc/" + hosCode + ".txt"));
 				} catch (JSONException e1)
 				{
 					e1.printStackTrace();
@@ -69,16 +72,6 @@ public class ComboHospital
 	public void setCombo(Combo combo)
 	{
 		this.combo = combo;
-	}
-
-	public String getAreaCode()
-	{
-		return areaCode;
-	}
-
-	public void setAreaCode(String areaCode)
-	{
-		this.areaCode = areaCode;
 	}
 
 	public String getPlatCode()

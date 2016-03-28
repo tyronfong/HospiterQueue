@@ -1,0 +1,1 @@
+[{"qpin":"jingshenke","deptName":"精神科","deptId":28904,"jpin":"jsk"},{"qpin":"xinlike","deptName":"心理科","deptId":28905,"jpin":"xlk"}]

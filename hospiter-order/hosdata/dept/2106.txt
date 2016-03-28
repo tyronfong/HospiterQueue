@@ -1,0 +1,1 @@
+[{"qpin":"quankezhenshi","deptName":"全科诊室","deptId":29048,"jpin":"qkzs"}]

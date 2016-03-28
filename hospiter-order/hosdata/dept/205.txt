@@ -1,1 +1,1 @@
-[{"deptName":"内科一","qpin":"neikeyi","deptId":7199,"jpin":"nky"}]
+[{"qpin":"neikeyi","deptName":"内科一","deptId":7199,"jpin":"nky"},{"deptName":"骨科","qpin":"guke","deptId":25632,"jpin":"gk"},{"deptName":"普内科","qpin":"puneike","deptId":25633,"jpin":"pnk"},{"deptName":"消化内科","qpin":"xiaohuaneike","deptId":25634,"jpin":"xhnk"},{"qpin":"fuchanke","deptName":"妇产科","deptId":25635,"jpin":"fck"},{"deptName":"全科医学科","qpin":"quankeyixueke","deptId":25636,"jpin":"qkyxk"}]

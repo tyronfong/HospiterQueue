@@ -25,13 +25,17 @@ public class ComboDoc
 		combo = new Combo(shell, SWT.NONE);
 		combo.setBounds(533, 304, 144, 25);
 		combo.setText("医生");
+	}
+
+	public void attachHosAction(final ComboHospital comboHospital)
+	{
 		combo.addSelectionListener(new SelectionAdapter()
 		{
 			public void widgetSelected(SelectionEvent e)
 			{
 				try
 				{
-					setPostDocInf("hosdata/doc/" + hosCode + ".txt", combo.getSelectionIndex());
+					setPostDocInf("hosdata/doc/" + comboHospital.getHosCode() + ".txt", combo.getSelectionIndex());
 				} catch (JSONException e1)
 				{
 					e1.printStackTrace();
@@ -41,7 +45,6 @@ public class ComboDoc
 				}
 			}
 		});
-
 	}
 
 	private void setPostDocInf(String docFilePath, int index) throws JSONException, IOException
@@ -95,6 +98,5 @@ public class ComboDoc
 	{
 		this.hosCode = hosCode;
 	}
-	
-	
+
 }

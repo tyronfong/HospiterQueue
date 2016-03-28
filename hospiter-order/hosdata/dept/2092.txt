@@ -1,0 +1,1 @@
+[{"qpin":"pifuzhiliaozhenjian","deptName":"皮肤治疗诊间","deptId":29309,"jpin":"pfzlzj"},{"deptName":"皮肤科诊间","qpin":"pifukezhenjian","deptId":29310,"jpin":"pfkzj"},{"qpin":"xiyaofang","deptName":"西药房","deptId":29311,"jpin":"xyf"},{"qpin":"neikezhenjian","deptName":"内科诊间","deptId":29537,"jpin":"nkzj"}]

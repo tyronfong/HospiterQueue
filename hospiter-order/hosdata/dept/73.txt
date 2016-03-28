@@ -1,1 +1,1 @@
-[{"deptName":"整形科","qpin":"zhengxingke","deptId":533,"jpin":"zxk"},{"deptName":"手足外科","qpin":"shouzuwaike","deptId":534,"jpin":"szwk"}]
+[{"qpin":"zhengxingke","deptName":"整形科","deptId":533,"jpin":"zxk"},{"deptName":"手外科","qpin":"shouwaike","deptId":534,"jpin":"swk"}]
