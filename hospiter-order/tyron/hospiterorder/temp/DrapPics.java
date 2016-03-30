@@ -20,7 +20,7 @@ import org.eclipse.swt.widgets.Text;
 
 import tyron.hospiterorder.common.RefreshAuthCodeRunable;
 
-public class drapPics extends Shell
+public class DrapPics extends Shell
 {
 	private Text text;
 	private RefreshAuthCodeRunable codeRefresher;
@@ -35,7 +35,7 @@ public class drapPics extends Shell
 		try
 		{
 			Display display = Display.getDefault();
-			final drapPics shell = new drapPics(display);
+			final DrapPics shell = new DrapPics(display);
 
 			shell.addShellListener(new ShellAdapter()
 			{
@@ -96,7 +96,7 @@ public class drapPics extends Shell
 	 * @throws Exception
 	 */
 	@SuppressWarnings("unchecked")
-	public drapPics(Display display) throws IOException
+	public DrapPics(Display display) throws IOException
 	{
 		super(display, SWT.SHELL_TRIM);
 
