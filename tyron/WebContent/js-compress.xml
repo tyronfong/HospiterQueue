@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="compress" basedir="./" default="yui-compress">
+	<!--属性 -->
+	<property name="yuicompressor-jar" value="${basedir}/yuicompressor-2.4.8.jar" />
+	<property name="JS_HOME" value="${basedir}/WEB-INF/js" />
+	<property name="JS_COMPRESSED_HOME" value="${basedir}/WEB-INF/js_compressed" />
+
+	<!--复制目录及文件 -->
+	<target name="copy">
+		<copy todir="${JS_COMPRESSED_HOME}" includeEmptyDirs="true"
+			overwrite="true" preservelastmodified="true">
+			<!--复制目录树 -->
+			<fileset dir="${JS_HOME}">
+				<exclude name="**/*.*" />
+			</fileset>
+			<!--复制其他文件 -->
+			<fileset dir="${JS_HOME}">
+				<include name="**/*.min.js" />
+				<include name="**/*.swf" />
+			</fileset>
+		</copy>
+	</target>
+
+	<!--压缩js -->
+	<target name="yui-compress" depends="copy">
+		<apply executable="java" parallel="false" verbose="true"
+			dest="${JS_COMPRESSED_HOME}">
+			<fileset dir="${JS_HOME}">
+				<include name="**/*.js" />
+				<exclude name="**/*.min.js" />
+			</fileset>
+			<arg line="-jar" />
+			<arg path="${yuicompressor-jar}" />
+			<arg line="--type js --charset UTF-8 -v -o" />
+			<mapper type="glob" from="*.js" to="*.js" />
+			<targetfile />
+		</apply>
+	</target>
+
+</project>

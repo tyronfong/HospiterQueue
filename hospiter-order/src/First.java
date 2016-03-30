@@ -73,6 +73,9 @@ public class First {
 		httprequest = new MyHttpRequest();
 	}
 
+	/**
+	 * @wbp.parser.entryPoint
+	 */
 	public void createContents() throws Exception {
 		initShell();
 		initTextUsername();
