@@ -37,18 +37,22 @@
 		</property>
 	</bean>
 	<bean id="sessionFactory"
-		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
 		<property name="dataSource" ref="dataSource"></property>
-		<property name="packagesToScan" value="com"></property>
 		<property name="hibernateProperties">
 			<props>
 				<prop key="dialect">org.hibernate.dialect.HSQLDialect</prop>
 				<prop key="hibernate.show_sql">true</prop>
 			</props>
 		</property>
+		<property name="packagesToScan">
+		    <list>
+		        <value>com.**</value>
+		    </list>
+		</property>
 	</bean>
 	<bean id="transactionManager"
-		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		class="org.springframework.orm.hibernate5.HibernateTransactionManager">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 		<property name="dataSource" ref="dataSource"></property>
 	</bean>
@@ -66,7 +70,7 @@
 	</tx:advice>
 	<aop:config>
 		<aop:pointcut id="serviceMethod"
-			expression="execution(* *..*Service.*(..))" /><!--定义切入点的处理的advice, 
+			expression="execution(* com..*Service.*(..))" /><!--定义切入点的处理的advice, 
 			advice-ref指向处理的advice,属性值需要跟advice的id一致， pointcut-ref指向切入点定义，需要跟切入点的定义的ID一致 -->
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="serviceMethod" />
 	</aop:config>

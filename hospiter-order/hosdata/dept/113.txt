@@ -1,1 +1,1 @@
-[{"deptName":"心血管门诊","qpin":"xinxueguanmenzhen","deptId":4988,"jpin":"xxgmz"},{"deptName":"中医-肿瘤科","qpin":"zhongyi-zhongliuke","deptId":4991,"jpin":"zyzlk"},{"deptName":"外科门诊","qpin":"waikemenzhen","deptId":5082,"jpin":"wkmz"}]
+[{"qpin":"xinxueguanmenzhen","deptName":"心血管门诊","deptId":4988,"jpin":"xxgmz"},{"qpin":"zhongyi-zhongliuke","deptName":"中医-肿瘤科","deptId":4991,"jpin":"zyzlk"},{"deptName":"外科门诊","qpin":"waikemenzhen","deptId":5082,"jpin":"wkmz"}]

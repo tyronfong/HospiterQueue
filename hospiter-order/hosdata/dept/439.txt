@@ -1,1 +1,1 @@
-[{"deptName":"骨科","qpin":"guke","deptId":10063,"jpin":"gk"},{"deptName":"内科","qpin":"neike","deptId":10064,"jpin":"nk"},{"deptName":"中医内科","qpin":"zhongyineike","deptId":10065,"jpin":"zynk"},{"deptName":"眼科","qpin":"yanke","deptId":10066,"jpin":"yk"}]
+[{"deptName":"骨科","qpin":"guke","deptId":10063,"jpin":"gk"},{"qpin":"neike","deptName":"内科","deptId":10064,"jpin":"nk"},{"deptName":"中医内科","qpin":"zhongyineike","deptId":10065,"jpin":"zynk"},{"deptName":"眼科","qpin":"yanke","deptId":10066,"jpin":"yk"}]

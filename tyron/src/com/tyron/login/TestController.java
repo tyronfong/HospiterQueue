@@ -15,8 +15,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.entity.User;
 import com.tyron.common.HibernateDao;
-import com.tyron.login.entity.User;
 
 @Controller
 @RequestMapping("receiver")

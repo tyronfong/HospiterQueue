@@ -1,1 +1,1 @@
-[{"docName":"陈炳旗","qpin":"chenbingqi","platDocId":14436,"docId":12347,"jpin":"cbq"},{"docName":"芦宝龙","qpin":"lubaolong","platDocId":14437,"docId":12339,"jpin":"lbl"},{"docName":"武东","qpin":"wudong","platDocId":14893,"docId":12519,"jpin":"wd"}]
+[{"qpin":"chenbingqi","docName":"陈炳旗","platDocId":14436,"docId":12347,"jpin":"cbq"},{"qpin":"lubaolong","docName":"芦宝龙","platDocId":14437,"docId":12339,"jpin":"lbl"},{"qpin":"wudong","docName":"武东","platDocId":14893,"docId":12519,"jpin":"wd"}]
