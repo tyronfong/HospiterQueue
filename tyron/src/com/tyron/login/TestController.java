@@ -30,5 +30,11 @@ public class TestController {
 		writer.println(echostr);
 		System.out.println(echostr);
 	}
+	
+	@RequestMapping("hhh.op")
+	@ResponseBody
+	public User index(){
+		return dao.getHibernateTemplate().get(User.class, (long)1);
+	}
 
 }
