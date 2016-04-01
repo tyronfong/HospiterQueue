@@ -32,5 +32,6 @@
 		<property name="realm" ref="myShiroRealm" />
 	</bean>
 	<bean id="myShiroRealm" class="com.tyron.signon.service.AuthRealm">
+	    <property name="dao" ref="baseDao"></property>
 	</bean>
 </beans>

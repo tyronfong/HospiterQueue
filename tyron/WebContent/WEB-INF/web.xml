@@ -50,7 +50,7 @@
 	<filter-mapping>
 		<filter-name>SpringOpenSessionInViewFilter</filter-name>
 		<url-pattern>*.do</url-pattern>
-		<url-pattern>*.po</url-pattern>
+		<url-pattern>*.op</url-pattern>
 		<dispatcher>REQUEST</dispatcher>
 		<dispatcher>FORWARD</dispatcher>
 		<dispatcher>INCLUDE</dispatcher>

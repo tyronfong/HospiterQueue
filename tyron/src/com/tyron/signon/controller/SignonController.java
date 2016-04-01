@@ -25,7 +25,7 @@ public class SignonController {
 		UsernamePasswordToken userToken = new UsernamePasswordToken(userName, password.toCharArray());
 		try {
 			SecurityUtils.getSubject().login(userToken);
-		} catch (AuthenticationException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 			return signonPage;
 		}

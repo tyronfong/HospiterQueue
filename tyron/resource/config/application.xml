@@ -42,6 +42,7 @@
 		<property name="hibernateProperties">
 			<props>
 				<prop key="dialect">org.hibernate.dialect.HSQLDialect</prop>
+				<prop key="hibernate.autoReconnect">true</prop>
 				<prop key="hibernate.show_sql">true</prop>
 			</props>
 		</property>
@@ -54,7 +55,6 @@
 	<bean id="transactionManager"
 		class="org.springframework.orm.hibernate5.HibernateTransactionManager">
 		<property name="sessionFactory" ref="sessionFactory"></property>
-		<property name="dataSource" ref="dataSource"></property>
 	</bean>
 	<tx:advice id="txAdvice" transaction-manager="transactionManager">
 		<tx:attributes><!-- 事务传播特性配置，一般使用REQUIRED(默认是REQUIRED) -->
@@ -74,8 +74,8 @@
 			advice-ref指向处理的advice,属性值需要跟advice的id一致， pointcut-ref指向切入点定义，需要跟切入点的定义的ID一致 -->
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="serviceMethod" />
 	</aop:config>
-	<bean id="hibernateDao" class="com.tyron.common.HibernateDao">
-		<property name="sessionFactory" ref="sessionFactory"></property>
+	<bean id="baseDao" class="com.tyron.common.HibernateDao">
+		<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
 
 	<!-- 对转向页面的路径解析。prefix：前缀， suffix：后缀 -->
