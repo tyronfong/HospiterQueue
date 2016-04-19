@@ -3,8 +3,6 @@ package com.tyron.signon.service;
 import java.util.HashSet;
 import java.util.List;
 
-import javax.annotation.Resource;
-
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;
@@ -14,7 +12,6 @@ import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.entity.User;
@@ -40,7 +37,7 @@ public class AuthRealm extends AuthorizingRealm {
 //		Session session = dao.getSessionFactory().openSession();
 //		Query query = session.createQuery("from User where userName = ?");
 //		query.setParameter(0, userToken.getUsername());
-		List<User> userList = (List<User>) dao.getHibernateTemplate().find("from User where userName = ?", userToken.getUsername());
+		List<User> userList = (List<User>) dao.find("from User where userName = ?", userToken.getUsername());
 //		@SuppressWarnings("unchecked")
 //		List<User> userList = query.list();
 		if (userList.size() == 0) {

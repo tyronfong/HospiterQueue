@@ -13,7 +13,8 @@
 		<property name="messageConverters">
 			<list>
 				<ref bean="mappingJackson2HttpMessageConverter" />
-				<bean class="org.springframework.http.converter.StringHttpMessageConverter"></bean>
+				<bean
+					class="org.springframework.http.converter.StringHttpMessageConverter"></bean>
 			</list>
 		</property>
 	</bean>
@@ -26,7 +27,7 @@
 			<value>com.mysql.jdbc.Driver</value>
 		</property>
 		<property name="url">
-			<value>jdbc:mysql://localhost:3306/tyrontest?useUnicode=true&amp;characterEncoding=UTF-8
+			<value>jdbc:mysql://localhost:3306/tyrontest?useUnicode=true&amp;characterEncoding=UTF-8 
 			</value>
 		</property>
 		<property name="username">
@@ -47,9 +48,9 @@
 			</props>
 		</property>
 		<property name="packagesToScan">
-		    <list>
-		        <value>com.**</value>
-		    </list>
+			<list>
+				<value>com.**</value>
+			</list>
 		</property>
 	</bean>
 	<bean id="transactionManager"
@@ -69,19 +70,15 @@
 		</tx:attributes>
 	</tx:advice>
 	<aop:config>
-		<aop:pointcut id="serviceMethod"
-			expression="execution(* com..*Service.*(..))" /><!--定义切入点的处理的advice, 
+		<aop:pointcut id="serviceMethod" expression="execution(* com..*Service.*(..))" /><!--定义切入点的处理的advice, 
 			advice-ref指向处理的advice,属性值需要跟advice的id一致， pointcut-ref指向切入点定义，需要跟切入点的定义的ID一致 -->
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="serviceMethod" />
 	</aop:config>
 	<bean id="baseDao" class="com.tyron.common.HibernateDao">
-		<property name="sessionFactory" ref="sessionFactory"/>
+		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
-
 	<!-- 对转向页面的路径解析。prefix：前缀， suffix：后缀 -->
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver"
 		p:prefix="/WEB-INF/pages/" p:suffix=".jsp" />
-
-
 </beans>
